@@ -22,19 +22,23 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        capVowelsLowRest("Hello World");
+        System.out.println(capVowelsLowRest("Hello World"));
         camelCase("   Intro  to   coMPUter    sCIEncE ");
         allIndexOf("Hello world",'l'); // output: {2, 3, 9}
     }
 
     public static String capVowelsLowRest (String string) {
         String vowels = "aeiou";
+        String capVowels = "AEIOU";
         String withBigVowels = "";
         boolean isVowel = false;
         for (int i = 0; i < string.length(); i++) {
             for (int j = 0; j < vowels.length(); j++) {
                 if (string.charAt(i) == vowels.charAt(j)) {
                     withBigVowels += (char) (string.charAt(i) - 32);
+                    isVowel = true;
+                } else if (string.charAt(i) == capVowels.charAt(j)) {
+                    withBigVowels += string.charAt(i);
                     isVowel = true;
                 }
             }

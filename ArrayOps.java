@@ -46,6 +46,7 @@ public class ArrayOps {
         for (int j = 0; j < array.length; j++) {
             if (array[j] < maxInt && array[j] >= secondMaxInt) {
                 secondMaxInt = array[j];
+            // if second max is the maximum (not same index)
             } else if (array[j] == maxInt && j != maxIndex) {
                 secondMaxInt = array[j];
             }
