@@ -45,7 +45,6 @@ public class StringOps {
             }
             isVowel = false;
         }
-        System.out.println(withBigVowels);
         return withBigVowels;
     }
 
@@ -82,7 +81,6 @@ public class StringOps {
                 nextWord = true;
             }
         }
-        System.out.println(camelCaseStr);
         return camelCaseStr;
     }
 
@@ -114,9 +112,6 @@ public class StringOps {
                 subStrIndex++;
             }
         }
-        System.out.print("output: ");
-        printArray(charAppearance);
-        System.out.println("");
         return charAppearance;
     }
 

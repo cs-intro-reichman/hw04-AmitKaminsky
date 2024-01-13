@@ -1,27 +1,26 @@
 public class ArrayOps {
     public static void main(String[] args) {
-    findMissingInt(new int[] {1});
-    secondMaxValue(new int[] {0, 0, 1, 2});
-    containsTheSameElements(new int[] {1, 5}, new int[] {5, 1, 5, 1, 5});
-    isSorted(new int[] {1, -2, 3});
+    System.out.println(findMissingInt(new int[] {1, 0}));
+    // System.out.println(secondMaxValue(new int[] {2, 8, 3, 7, 8}));
+    // containsTheSameElements(new int[] {1, 5}, new int[] {5, 1, 5, 1, 5});
+    // isSorted(new int[] {1, -2, 3});
     }
     
     
     public static int findMissingInt (int [] array) {
         int missingInt = -1;
         boolean isMissing = false;
-        for (int arrayIndex = 0; arrayIndex < array.length; arrayIndex++) {
-            for (int i = 0; i < array.length; i++) { 
+        for (int i = 0; i < array.length + 1; i++) {    
+            for (int arrayIndex = 0; arrayIndex < array.length; arrayIndex++) {
                 /* Check if the value is in the array, if yes then
                  * continue to the next value in given array.
                  */
-                if (i != array[arrayIndex]) {
+                if ((i != array[arrayIndex])) {
                     isMissing = true;
                     missingInt = i;
                 } else if (i == array[arrayIndex]) {
                     isMissing = false;
-                    missingInt = 1;
-                    continue;
+                    break;
                 }
             }
             if (isMissing == true) {
@@ -40,7 +39,7 @@ public class ArrayOps {
         }
         // Find second maximum value compared to the max
         for (int arrayIndex = 0; arrayIndex < array.length; arrayIndex++) {
-            if ((array[arrayIndex] < maxInt) && array[arrayIndex] > secondMaxInt) {
+            if ((array[arrayIndex] <= maxInt) && array[arrayIndex] >= secondMaxInt) {
                 secondMaxInt = array[arrayIndex];
             }
         }
